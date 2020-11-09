@@ -1,0 +1,31 @@
+@value btn_border_radius, btn_padding from "../../../common/size.css";
+@value paintBlack, paintWhite from "../../../common/colors.css";
+.info {
+  margin-top: 2rem;
+  position: relative;
+  height: 100%;
+}
+.info > * {
+  margin-bottom: 0.5rem;
+}
+.filebox {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.fileBtn {
+  color: paintBlack;
+  background-color: paintWhite;
+  padding: btn_padding;
+  border-radius: btn_border_radius;
+  font-size: 1em;
+  outline: none;
+  border: none;
+}
+.file {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

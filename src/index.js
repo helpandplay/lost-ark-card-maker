@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app";
-import Auth from "./services/firebase_auth";
+import Auth from "./services/firebase/auth";
 
 const auth = new Auth();
 ReactDOM.render(

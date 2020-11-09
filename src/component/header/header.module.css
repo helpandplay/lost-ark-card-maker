@@ -1,12 +1,28 @@
-@value paintBlack, paintWhite, paintBrown from "../../common/colors.css";
+@value paintBlack, paintWhite, paintBrown, paintBlue from "../../common/colors.css";
+@value btn_border_radius, btn_padding from "../../common/size.css";
 .header {
+  position: relative;
   cursor: default;
   flex-basis: 15%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: paintBrown;
   padding: 0.8rem;
   background-color: paintBlack;
-  border-radius: 0.5em 0.5em 0 0;
+}
+.popup_info {
+  margin-top: 0.5rem;
+}
+.popup_close {
+  position: absolute;
+  left: 1em;
+  top: 0.5em;
+  font-size: 1rem;
+  border: none;
+  background-color: paintBlue;
+  padding: 0.8rem 1.6rem;
+  color: paintWhite;
+  border-radius: btn_border_radius;
 }

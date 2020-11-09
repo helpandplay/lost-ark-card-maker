@@ -1,4 +1,4 @@
-import firebaseApp from "./firebase_config";
+import firebaseApp from "./config";
 import firebase from "firebase";
 
 class Auth {

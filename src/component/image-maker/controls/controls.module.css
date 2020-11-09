@@ -1,0 +1,28 @@
+@value paintWhite from "../../../common/colors.css";
+@value btn_border_radius,btn_padding from "../../../common/size.css";
+@value btn_hover, btn_scale from  "../../../common/animation.css";
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  transform: translateX(-50%);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.controlBtn {
+  border: none;
+  background-color: paintWhite;
+  border-radius: btn_border_radius;
+  padding: btn_padding;
+  cursor: pointer;
+  transition: btn_hover;
+}
+.controlBtn:hover {
+  transform: btn_scale;
+}
+.cancel {
+  padding: 0.4rem 1rem;
+}

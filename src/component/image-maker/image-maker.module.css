@@ -1,0 +1,44 @@
+@value paintWhite,paintBrown from "../../common/colors.css";
+
+.image_maker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: paintWhite;
+  width: 100%;
+  height: 100%;
+}
+.crop {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+.crop_container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 80px;
+  top: 0;
+}
+.popup {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.popup::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: paintBrown;
+  position: absolute;
+  z-index: -1;
+}
