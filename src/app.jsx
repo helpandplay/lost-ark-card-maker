@@ -5,15 +5,15 @@ import Login from "./component/login/login";
 import ImageMaker from "./component/image-maker/image-maker";
 import "./app.css";
 
-function app() {
+function app({ auth }) {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home auth={auth} />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login auth={auth} />
         </Route>
         <Route path="/image-maker">
           <ImageMaker />
