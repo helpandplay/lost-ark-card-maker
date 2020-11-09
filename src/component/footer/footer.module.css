@@ -1,0 +1,15 @@
+@value paintBlack, paintWhite from "../../common/colors.css";
+.footer {
+  cursor: default;
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: paintBlack;
+  color: paintWhite;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.logo {
+  width: 50%;
+  height: auto;
+}
