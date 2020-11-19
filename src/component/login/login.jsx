@@ -7,8 +7,8 @@ import styles from "./login.module.css";
 
 const Login = ({ auth }) => {
   const history = useHistory();
-  const onLogin = async (type) => {
-    const user = await auth.onLogin(type);
+  const onLogin = async (socialType) => {
+    const user = await auth.onLogin(socialType);
     history.push({
       pathname: "/",
       state: { id: user.uid },

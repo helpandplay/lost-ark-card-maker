@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./login-main.module.css";
+import Button from "../../button/button";
 const LoginMain = ({ onLogin }) => {
   const handleLogin = (e) => {
     onLogin(e.target.textContent);
@@ -7,14 +8,10 @@ const LoginMain = ({ onLogin }) => {
   return (
     <ul className={styles.login_main}>
       <li>
-        <button onClick={handleLogin} className={styles.social_btn}>
-          Google
-        </button>
+        <Button handleLogin={handleLogin} value="Google" />
       </li>
       <li>
-        <button onClick={handleLogin} className={styles.social_btn}>
-          Facebook
-        </button>
+        <Button handleLogin={handleLogin} value="Facebook" />
       </li>
     </ul>
   );

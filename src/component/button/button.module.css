@@ -1,0 +1,44 @@
+@value paintBlue,paintBrown,paintWhite from "../../common/colors.css";
+.btn {
+  width: 90%;
+  color: paintBlue;
+  cursor: pointer;
+  padding: 1rem;
+  outline: 0;
+  border: 0;
+  border-radius: 10rem;
+  font-size: 1em;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: paintBrown;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: paintBlue;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.btn:hover {
+  color: paintWhite;
+}
+.btn:hover::before {
+  width: 100%;
+}
