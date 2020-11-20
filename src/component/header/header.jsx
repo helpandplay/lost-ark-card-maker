@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./header.module.css";
 const Header = ({ user, onLogout, onClose }) => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       {user && (
         <a target="_blank" href="/image-maker">
           이미지 생성기
@@ -17,7 +17,7 @@ const Header = ({ user, onLogout, onClose }) => {
           Log out
         </button>
       )}
-    </div>
+    </header>
   );
 };
 

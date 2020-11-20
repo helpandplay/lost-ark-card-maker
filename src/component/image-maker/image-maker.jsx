@@ -27,7 +27,7 @@ const ImageMaker = () => {
   const cancelCroppedImage = useCallback(() => {
     //취소하고 다시 똑같은 이미지를 클릭하면 이벤트가 듣지 않는 이슈 있음.
     setUpImg(null);
-  }, [croppedImage]);
+  }, []);
   const showCroppedImage = useCallback(async () => {
     try {
       const croppedImage = await getCroppedImg(
@@ -40,7 +40,7 @@ const ImageMaker = () => {
     } catch (e) {
       console.error(e);
     }
-  }, [croppedAreaPixels, rotation]);
+  }, [croppedAreaPixels, rotation, upimg]);
 
   const onClose = useCallback(() => {
     setCroppedImage(null);

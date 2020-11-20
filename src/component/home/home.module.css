@@ -1,0 +1,17 @@
+@value mediaQuery from "../../common/size.css";
+.container {
+  width: 90%;
+  height: 80%;
+  min-width: 32rem;
+  display: flex;
+  flex-direction: column;
+}
+.card_maker {
+  display: flex;
+  flex-basis: 70%;
+}
+@media screen and (max-width: mediaQuery) {
+  .card_maker {
+    flex-direction: column;
+  }
+}

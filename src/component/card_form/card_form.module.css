@@ -1,0 +1,9 @@
+@value paintBlue from "../../common/colors.css";
+.form {
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid paintBlue;
+  border-radius: 4px;
+  height: 100%;
+}
