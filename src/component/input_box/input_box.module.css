@@ -1,10 +1,13 @@
-@value paintBlue, paintBlack,paintBrown,paintGray from "../../common/colors.css";
+@value paintBlue, paintBlack,paintBrown,paintGray,paintWhite from "../../common/colors.css";
 .input_group {
   position: relative;
-  background-color: none;
+  background-color: transparent;
   padding: 0.5em;
   margin-top: 0.5em;
   flex-basis: 50%;
+}
+.message {
+  flex-basis: 100%;
 }
 input {
   font-size: 1em;
@@ -12,90 +15,35 @@ input {
   padding-left: 0.5em;
   display: block;
   width: 100%;
-  border: none;
-
-  border-bottom: 1px solid paintGray;
+  border: 1px solid transparent;
+  border-radius: 0.5em 0.5em 0 0;
+  border-bottom: 1px solid paintBlue;
+  transition: all 200ms ease;
 }
 input:focus {
+  border: 1px solid paintBrown;
   outline: none;
 }
 label {
-  color: paintGray;
+  color: paintBlue;
   font-size: 1em;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 0.8em;
-  top: 1.5em;
+  padding: 0 0.2em;
+  left: 0.4em;
+  top: 1.7em;
   transition: all 200ms ease;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
+input:focus ~ label {
+  color: paintBrown;
+}
 input:focus ~ label,
 input:valid ~ label {
-  top: -0.45em;
-  left: 0.8em;
+  top: -0.1em;
+  left: 1em;
   font-size: 0.9em;
-  color: paintBlue;
-}
-.bar {
-  position: absolute;
-  display: block;
-  width: 100%;
-}
-.bar::before,
-.bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background-color: paintBlue;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.bar:before {
-  left: 50%;
-}
-.bar:after {
-  right: 50%;
-}
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
-  width: 50%;
-}
-input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
-
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: paintBlue;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@-moz-keyframes inputHighlighter {
-  from {
-    background: paintBlue;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@keyframes inputHighlighter {
-  from {
-    background: paintBlue;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
+  background-color: paintWhite;
 }

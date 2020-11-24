@@ -9,22 +9,21 @@ const Home = ({ auth }) => {
   const location = useLocation();
   const history = useHistory();
   //Fake data
-  const [cards, setCards] = useState([
-    {
-      id: 1,
-      characterName: "맹무",
-      job: "Bard",
-      server: "Caramine",
-      level: "1403.02",
-      teamLevel: "192",
-      message: "하트 바드세요.",
-      theme: "default",
-      guild: "봄이왔어요",
-      imageName: null,
-      imageUrl: null,
-    },
-  ]);
-
+  const [cardData, setCardData] = useState({});
+  const [cards, setCards] = useState([]);
+  const getInputData = (data) => {
+    const dataKey = Object.keys(data)[0];
+    cardData[dataKey] = data[dataKey];
+    setCardData(cardData);
+    console.log(cardData);
+  };
+  const onAddCard = (e) => {
+    e.preventDefault();
+    cardData.id = Date.now();
+    // * 나중엔 db에다가도 저장할꺼임.
+    setCards([...cards, cardData]);
+    setCardData({});
+  };
   const onLogout = () => {
     auth.onLogout();
   };
@@ -43,8 +42,8 @@ const Home = ({ auth }) => {
     <main className={styles.container}>
       <Header onLogout={onLogout} user={location.state && location.state.id} />
       <section className={styles.card_maker}>
-        <Editor cards={cards} />
-        <Preview />
+        <Editor getInputData={getInputData} onAddCard={onAddCard} />
+        <Preview cards={cards} />
       </section>
       <Footer />
     </main>

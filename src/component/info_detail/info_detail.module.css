@@ -1,0 +1,10 @@
+@value paintBrown from "../../common/colors.css";
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 0.8em;
+  margin-left: 1.2em;
+  color: paintBrown;
+}

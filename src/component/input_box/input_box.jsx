@@ -1,16 +1,22 @@
 import React from "react";
 import styles from "./input_box.module.css";
-const InputBox = ({ text, name }) => (
-  <div className={`${styles.input_group} ${getClassName(name)}`}>
-    <input type="text" name={name} id={name} required />
-    <span className={styles.highlight} />
-    <span className={styles.bar} />
-    <label htmlFor={name}>{text}</label>
-  </div>
-);
+const InputBox = ({ text, name, maxLength }) => {
+  return (
+    <div className={`${styles.input_group} ${getClassName(name)}`}>
+      <input
+        type="text"
+        name={name}
+        id={name}
+        required
+        maxLength={maxLength || "12"}
+      />
+      <label htmlFor={name}>{text}</label>
+    </div>
+  );
+};
 const getClassName = (name) => {
   switch (name) {
-    case "character":
+    case "characterName":
       return styles.character;
     case "job":
       return styles.job;
@@ -18,8 +24,8 @@ const getClassName = (name) => {
       return styles.server;
     case "level":
       return styles.level;
-    case "team_level":
-      return styles.team_level;
+    case "territory":
+      return styles.territory;
     case "message":
       return styles.message;
     case "guild":

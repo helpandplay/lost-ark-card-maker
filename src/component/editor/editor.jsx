@@ -2,13 +2,11 @@ import React from "react";
 import CardForm from "../card_form/card_form";
 import styles from "./editor.module.css";
 
-const Editor = ({ cards }) => {
+const Editor = ({ getInputData, onAddCard }) => {
   return (
     <section className={styles.editor}>
       <ul className={styles.card_form}>
-        {cards.map((card) => (
-          <CardForm key={card.id} card={card} />
-        ))}
+        <CardForm getInputData={getInputData} onAddCard={onAddCard} />
       </ul>
       <button>Add Form</button>
     </section>

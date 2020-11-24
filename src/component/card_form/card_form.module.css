@@ -1,9 +1,57 @@
-@value paintBlue from "../../common/colors.css";
-.form {
-  margin: 1em;
+@value paintBlue,paintBrown,paintWhite,paintGray from "../../common/colors.css";
+:root {
+  --input-border-radius: 0.3em;
+}
+.form fieldset {
+  margin: 1em 0.5em;
+  padding: 0 0.5em;
   display: flex;
+  align-content: flex-start;
   flex-wrap: wrap;
-  border: 2px solid paintBlue;
   border-radius: 4px;
   height: 100%;
+}
+.message {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  margin-top: 1em;
+  padding: 0 0.5em;
+}
+.file {
+  display: none;
+}
+.btn_box {
+  margin-top: 1.5em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.btn_box > * {
+  flex-basis: 50%;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select {
+  padding: 0.7em;
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid paintBlue;
+  border-radius: var(--input-border-radius);
+  transition: all 200ms ease;
+}
+.theme {
+  width: 90%;
+}
+.job {
+  flex-basis: 50%;
+  margin-top: 1em;
+  height: fit-content;
+}
+.select:hover {
+  outline: none;
+  color: paintBrown;
+  border: 1px solid paintBrown;
 }

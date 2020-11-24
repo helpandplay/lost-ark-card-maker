@@ -1,5 +1,6 @@
+@value paintWhite from "../../common/colors.css";
 .editor {
-  background-color: antiquewhite;
+  background-color: paintWhite;
   flex-basis: 50%;
 }
 .card_form {
