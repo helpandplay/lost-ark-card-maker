@@ -9,3 +9,9 @@
 - PostCSS
 - React Router
 - Cloudnary
+
+## Library
+- React
+- react-easy-crop
+- html-to-image
+- downloadjs
