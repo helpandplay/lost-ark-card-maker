@@ -7,3 +7,5 @@
 - React
 - Firebase
 - PostCSS
+- React Router
+- Cloudnary
