@@ -8,10 +8,10 @@ const LoginMain = ({ onLogin }) => {
   return (
     <ul className={styles.login_main}>
       <li>
-        <Button handleLogin={handleLogin} value="Google" />
+        <Button onClick={handleLogin} value="Google" />
       </li>
       <li>
-        <Button handleLogin={handleLogin} value="Facebook" />
+        <Button onClick={handleLogin} value="Facebook" />
       </li>
     </ul>
   );

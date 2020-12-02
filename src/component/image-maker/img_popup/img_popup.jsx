@@ -5,10 +5,11 @@ const ImgPopUp = ({ img, onClose }) => {
   return (
     <>
       <div className={styles.header}>
-        <Header onClose={onClose} />
+        <Header />
       </div>
       <div className={styles.img_container}>
         <img src={img} alt="잘라낸 이미지" className={styles.img} />
+        <p>위의 이미지를 저장하세요</p>
         <div className={styles.btn_container}>
           {onClose && (
             <button

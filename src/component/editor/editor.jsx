@@ -2,13 +2,12 @@ import React from "react";
 import CardForm from "../card_form/card_form";
 import styles from "./editor.module.css";
 
-const Editor = ({ getInputData, onAddCard }) => {
+const Editor = ({ onAddCard, imageUploader }) => {
   return (
     <section className={styles.editor}>
       <ul className={styles.card_form}>
-        <CardForm getInputData={getInputData} onAddCard={onAddCard} />
+        <CardForm onAddCard={onAddCard} imageUploader={imageUploader} />
       </ul>
-      <button>Add Form</button>
     </section>
   );
 };

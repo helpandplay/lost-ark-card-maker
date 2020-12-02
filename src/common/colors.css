@@ -4,3 +4,16 @@
 @value paintGray: lightgray;
 @value paintShadow: 0px 0px 5px 5px rgba(117,117,117,1);
 @value paintBlue: #1b1e24;
+@value themeRed: #e63946;
+@value themeRedGradient: linear-gradient(304deg, #e63946 0%, #e4668a 100%);
+@value themeYellow: #ffbc42;
+@value themeYellowGradient: linear-gradient(304deg, #ffbc42 0%, #ffaa42 100%);
+@value themeGreen: #218380;
+@value themeGreenGradient: linear-gradient(304deg, #218380 0%, #216d83 100%);
+@value themeLightBlue: #70cad6;
+@value themeLightBlueGradient: linear-gradient(304deg, #70cad6 0%, #6eafd4 100%);
+@value themePink: #ff87ab;
+@value themePinkGradient: linear-gradient(304deg, #ff87ab 0%, #ff878c 100%);
+@value themeBlack: #2d2f2d;
+@value themeBlackGradient: linear-gradient(304deg, #2d2f2d 0%, #424342 100%);
+@value boxShadow: 0 14px 24px -5px rgba(0, 0, 0, 0.40);

@@ -9,12 +9,64 @@
   z-index: 1;
   opacity: 0.2;
 }
-.battlemaster {
+.class_image {
   position: absolute;
-
   background: url(/images/sprite_information.png) no-repeat 0 0;
   width: 100%;
   height: 100%;
+  transform: scale(1);
+}
+.warload {
+  background-position: -1373px -380px;
+}
+.berserker {
+  background-position: -918px -191px;
+}
+.destoryer {
+  background-position: -1357px -293px;
+}
+.holyknight {
+  background-position: -1362px -472px;
+}
+.battlemaster {
   background-position: -1351px -960px;
-  transform: scale(0.6);
+}
+.infighter {
+  background-position: -1346px -1046px;
+}
+.soulmaster {
+  background-position: -1260px -769px;
+}
+.lancer {
+  background-position: -1260px -667px;
+}
+.devilhunter {
+  background-position: -1170px -497px;
+}
+.hawkeye {
+  background-position: -1357px -199px;
+}
+.blaster {
+  background-position: -1260px -960px;
+}
+.scouter {
+  background-position: -1260px -1137px;
+}
+.summor {
+  background-position: -1260px -1046px;
+}
+.bard {
+  background-position: -918px -288px;
+}
+.arcana {
+  background-position: -1170px -587px;
+}
+.blade {
+  background-position: -1260px -380px;
+}
+.demonic {
+  background-position: -1346px -769px;
+}
+.reaper {
+  background-position: -1355px -568px;
 }

@@ -2,15 +2,23 @@
 .container {
   width: 90%;
   height: 80%;
-  min-width: 32rem;
+  min-width: 700px;
+  max-width: 90rem;
   display: flex;
   flex-direction: column;
 }
 .card_maker {
   display: flex;
-  flex-basis: 70%;
+  flex-basis: 80%;
+  overflow: hidden;
 }
 @media screen and (max-width: mediaQuery) {
+  .container {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
   .card_maker {
     flex-direction: column;
   }

@@ -1,21 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./button.module.css";
-const Button = ({
-  onLogin,
-  onLogout,
-  onChangeFile,
-  onDelete,
-  onAddCard,
-  value,
-}) => {
+const Button = memo(({ onClick, value }) => {
   return (
-    <button
-      onClick={onLogin || onLogout || onChangeFile || onDelete || onAddCard}
-      className={styles.btn}
-    >
+    <button onClick={onClick} className={styles.btn}>
       {value}
     </button>
   );
-};
+});
 
 export default Button;

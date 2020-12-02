@@ -9,10 +9,12 @@ const Login = ({ auth }) => {
   const history = useHistory();
   const onLogin = async (socialType) => {
     const user = await auth.onLogin(socialType);
-    history.push({
-      pathname: "/",
-      state: { id: user.uid },
-    });
+    if (user) {
+      history.push({
+        pathname: "/",
+        state: { id: user.uid },
+      });
+    }
   };
   return (
     <div className={styles.login}>

@@ -26,3 +26,12 @@
 .cancel {
   padding: 0.4rem 1rem;
 }
+.zoom,
+.rotation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.label {
+  all: unset;
+}

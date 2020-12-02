@@ -5,45 +5,60 @@ import Footer from "../footer/footer";
 import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import styles from "./home.module.css";
-const Home = ({ auth }) => {
-  const location = useLocation();
+import dotenv from "dotenv";
+dotenv.config();
+const Home = ({ auth, imageUploader, database, ImageDownload }) => {
+  const locationState = useLocation().state;
   const history = useHistory();
-  //Fake data
-  const [cardData, setCardData] = useState({});
   const [cards, setCards] = useState([]);
-  const getInputData = (data) => {
-    const dataKey = Object.keys(data)[0];
-    cardData[dataKey] = data[dataKey];
-    setCardData(cardData);
-    console.log(cardData);
-  };
-  const onAddCard = (e) => {
-    e.preventDefault();
-    cardData.id = Date.now();
-    // * 나중엔 db에다가도 저장할꺼임.
+  const onAddCard = (cardData) => {
+    const uuid = Date.now();
+    cardData.id = uuid;
+    database.create(cardData, locationState.id);
     setCards([...cards, cardData]);
-    setCardData({});
+  };
+  const onCardDelete = (id) => {
+    //state 삭제
+    const newCards = cards.filter((card) => card.id !== id);
+    setCards(newCards);
+    //db 삭제
+    database.delete(locationState.id, id);
   };
   const onLogout = () => {
     auth.onLogout();
   };
   useEffect(() => {
-    //Home으로 접속 시 user정보가 있는 지 판별
+    if (!locationState) {
+      return;
+    }
+    database.read(locationState.id, (values) => {
+      // { {}, {} } => [ {}, {} ]
+      const valuesKeys = Object.keys(values);
+      setCards(Array.from(valuesKeys, (item) => values[item]));
+    });
+  }, [locationState, database]);
+  useEffect(() => {
     auth.onAuthChange((user) => {
-      !user && history.push("/login");
-      user &&
+      if (!user) {
+        history.push("/login");
+      } else {
         history.push({
           pathname: "/",
           state: { id: user.uid },
         });
+      }
     });
   }, [auth, history]);
   return (
     <main className={styles.container}>
-      <Header onLogout={onLogout} user={location.state && location.state.id} />
+      <Header onLogout={onLogout} user={locationState && locationState.id} />
       <section className={styles.card_maker}>
-        <Editor getInputData={getInputData} onAddCard={onAddCard} />
-        <Preview cards={cards} />
+        <Editor onAddCard={onAddCard} imageUploader={imageUploader} />
+        <Preview
+          cards={cards}
+          onCardDelete={onCardDelete}
+          ImageDownload={ImageDownload}
+        />
       </section>
       <Footer />
     </main>

@@ -5,6 +5,12 @@
   position: relative;
   height: 100%;
 }
+.info_detail {
+  pointer-events: none;
+}
+.info_detail > * {
+  margin-bottom: 0.2rem;
+}
 .info > * {
   margin-bottom: 0.5rem;
 }
@@ -23,6 +29,7 @@
   border: none;
 }
 .file {
+  cursor: pointer;
   font-size: 100px;
   position: absolute;
   left: 0;

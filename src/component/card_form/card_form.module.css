@@ -55,3 +55,6 @@
   color: paintBrown;
   border: 1px solid paintBrown;
 }
+.info {
+  padding-left: 1em;
+}

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./job_image.module.css";
-const JobImage = ({ job }) => {
+const JobImage = memo(({ job }) => {
   return (
     <figure className={styles.job_image}>
-      <div className={getJobImage(job)}></div>
+      <div className={`${getJobImage(job)} ${styles.class_image}`}></div>
     </figure>
   );
-};
+});
 const getJobImage = (job) => {
   switch (job) {
     case "워로드":
@@ -15,6 +15,8 @@ const getJobImage = (job) => {
       return styles.berserker;
     case "디스트로이어":
       return styles.destoryer;
+    case "홀리나이트":
+      return styles.holyknight;
     case "배틀마스터":
       return styles.battlemaster;
     case "인파이터":

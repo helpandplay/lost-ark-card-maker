@@ -1,10 +1,26 @@
 @value paintBrown from "../../common/colors.css";
 .wrapper {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
 }
 .title {
-  font-size: 0.8em;
-  margin-left: 1.2em;
   color: paintBrown;
+  font-size: 1.05em;
+  margin-right: 1em;
+}
+.yellow .title {
+  color: #402f11;
+}
+.pink .title {
+  color: #40222b;
+}
+.green .title {
+  color: #361503;
+}
+.lightBlue .title {
+  color: #8a552c;
+}
+.red .title {
+  color: #661a20;
 }

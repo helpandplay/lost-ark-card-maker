@@ -1,6 +1,7 @@
 import React from "react";
+import { memo } from "react";
 import styles from "./input_box.module.css";
-const InputBox = ({ text, name, maxLength }) => {
+const InputBox = memo(({ text, name, maxLength }) => {
   return (
     <div className={`${styles.input_group} ${getClassName(name)}`}>
       <input
@@ -13,7 +14,7 @@ const InputBox = ({ text, name, maxLength }) => {
       <label htmlFor={name}>{text}</label>
     </div>
   );
-};
+});
 const getClassName = (name) => {
   switch (name) {
     case "characterName":

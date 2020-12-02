@@ -1,8 +1,23 @@
+@value paintWhite from "../../common/colors.css";
+@value mediaQuery from "../../common/size.css";
 .preview {
-  background-color: aqua;
+  min-width: 33rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  background-color: paintWhite;
   padding: 1em 1.5em;
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.preview::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: mediaQuery) {
+  .preview {
+    max-height: 20rem;
+  }
 }

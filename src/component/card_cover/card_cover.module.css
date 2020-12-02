@@ -1,0 +1,26 @@
+.card_cover {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  text-align: end;
+  z-index: 1;
+}
+.icon {
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 2em;
+  height: 2em;
+}
+.close,
+.download {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}

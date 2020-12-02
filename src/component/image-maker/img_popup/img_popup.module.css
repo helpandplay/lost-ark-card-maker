@@ -34,6 +34,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  margin-bottom: 0.3rem;
 }
 .popup_btn::after {
   content: "";

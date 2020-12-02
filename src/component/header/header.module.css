@@ -3,10 +3,10 @@
 .header {
   position: relative;
   cursor: default;
-  flex-basis: 15%;
+  flex-basis: 10%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   color: paintBrown;
   padding: 0.8rem;
@@ -25,4 +25,19 @@
   padding: 0.8rem 1.6rem;
   color: paintWhite;
   border-radius: btn_border_radius;
+}
+.imageGeneratorLink {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: paintWhite;
+  color: paintBlue;
+  padding: 0.5em;
+}
+.logout {
+  cursor: pointer;
+  background-color: paintWhite;
+  padding: 0.5em;
+  color: paintBlue;
+  outline: none;
+  border: none;
 }

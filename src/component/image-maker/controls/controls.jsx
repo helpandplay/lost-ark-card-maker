@@ -8,7 +8,10 @@ const Controls = ({
 }) => {
   return (
     <div className={styles.controls}>
-      <div>
+      <div className={styles.zoom}>
+        <label htmlFor="Zoom" className={styles.label}>
+          Zoom
+        </label>
         <input
           type="range"
           name=""
@@ -19,9 +22,11 @@ const Controls = ({
           value="1"
           onChange={(e) => onZoom(e.target.value)}
         />
-        <label htmlFor="Zoom">Zoom</label>
       </div>
-      <div>
+      <div className={styles.rotation}>
+        <label htmlFor="Rotation" className={styles.label}>
+          Rotation
+        </label>
         <input
           type="range"
           name=""
@@ -32,7 +37,6 @@ const Controls = ({
           value="0"
           onChange={(e) => onRotation(e.target.value)}
         />
-        <label htmlFor="Rotation">Rotation</label>
       </div>
       <button
         className={`${styles.result} ${styles.controlBtn}`}
